@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff2f7">
+<title>To Goja, with love ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+:root {
+  --pink: #ff8fb1;
+  --rose: #e95f91;
+  --purple: #a78bfa;
+  --ink: #704b69;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Cairo', sans-serif;
+  color: var(--ink);
+  background: linear-gradient(145deg, #fff2f7, #f6efff, #fff8f0);
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 23px;
+  color: white;
+  background: linear-gradient(100deg, #f58caf, #b19af8);
+  box-shadow: 0 7px 18px #df8eb63b;
+  transition: transform .2s, opacity .2s;
+}
+
+button:hover { transform: translateY(-2px); }
+button:disabled { opacity: .7; cursor: default; }
+
+.page {
+  width: min(92%, 600px);
+  margin: auto;
+  padding: 32px 0 50px;
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  background: #ffffffb8;
+  border: 1px solid #f7d5e5;
+  border-radius: 30px;
+  padding: 7px 17px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: clamp(36px, 9vw, 60px);
+  line-height: 1.3;
+  margin: 18px 0 8px;
+  color: #df6594;
+}
+
+h1 span { color: #a78bfa; }
+
+.subtitle { font-size: 16px; line-height: 2; }
+
+.cake {
+  font-size: 100px;
+  margin: 10px 0;
+  filter: drop-shadow(0 12px 15px #e7a5c54d);
+  animation: bob 2.5s ease-in-out infinite;
+}
+
+@keyframes bob {
+  50% { transform: translateY(-9px) rotate(2deg); }
+}
+
+.card {
+  margin-top: 25px;
+  background: #ffffffc9;
+  border: 1px solid #fff;
+  border-radius: 28px;
+  padding: 25px 22px;
+  box-shadow: 0 16px 50px #c99abb20;
+}
+
+.small { font-size: 13px; color: #a17c9d; }
+
+#letter {
+  display: none;
+  text-align: right;
+  line-height: 2.2;
+  animation: appear .8s ease;
+}
+
+#letter.show { display: block; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.letter-title {
+  text-align: center;
+  color: #e56898;
+  font-size: 25px;
+}
+
+.note {
+  background: #fff3f8;
+  border-radius: 18px;
+  padding: 16px;
+  margin-top: 15px;
+}
+
+#surprise {
+  display: none;
+  margin-top: 18px;
+  font-size: 18px;
+  color: #a26ed0;
+}
+
+#surprise.show {
+  display: block;
+  animation: appear .7s ease;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0 5px;
+  direction: rtl;
+}
+
+.unit {
+  background: white;
+  border-radius: 16px;
+  padding: 12px 16px;
+  min-width: 75px;
+  box-shadow: 0 5px 18px #c99abb16;
+}
+
+.unit strong {
+  display: block;
+  font-size: 25px;
+  color: #df6594;
+}
+
+.unit span { font-size: 11px; }
+
+.footer {
+  margin-top: 28px;
+  font-size: 12px;
+  color: #a17c9d;
+}
+
+#bouquetCard { display: none; }
+
+.float {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  animation: rise 5s linear forwards;
+  z-index: 5;
+}
+
+@keyframes rise {
+  to { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
+
+@media (max-width: 380px) {
+  .card { padding: 20px 15px; }
+  .unit { min-width: 65px; padding: 10px; }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+  <div class="tag">A LITTLE SURPRISE FOR YOU ♡</div>
+
+  <h1>كل سنة وإنتي طيبة<br><span>يا جوجا 🎀</span></h1>
+
+  <p class="subtitle">
+    حبيت أكون مبدع شوية...<br>
+    وعملتلك حاجة بسيطة كدة 💗
+  </p>
+
+  <div class="cake">🎂</div>
+
+  <section class="card">
+    <div style="font-size:28px">💌</div>
+    <h2>كل سنة وانتي طيبة، دي هدية بسيطة!</h2>
+    <p class="small">بس لازم تدوسي على الزرار الأول 👀</p>
+
+    <button id="openBtn" onclick="openLetter()">
+      افتحي هديتك ♡
+    </button>
+
+    <div id="letter">
+      <h2 class="letter-title">احممم 🌷</h2>
+
+      <p>
+        كل سنة وإنتي طيبة يا جوجااا 💗🎂 ويا رب السنة الجديدة
+        تبقى مليانة فرحة ونجاح.
+      </p>
+
+      <p>
+        بصي بقى أنا كنت عايز أعملك حاجة مختلفة شوية فقولت
+        بدل ما أبعتلك رسالة عادية أعملك حاجة جديدة مخصوص ليكي🎀
+      </p>
+
+      <p>
+        يارب تفضلي دايمًا مبسوطة وتحققي كل اللي نفسك فيه
+        وتفضلي في سعادة دايمًا، ويا رب لو شايلة مني تصفي بعد الرسالة دي
+        ويا رب الزعل يبعد عنك.
+      </p>
+
+      <div class="note">
+        <strong>وعندي اعتراف صغير كده 💗</strong><br>
+        إنتي من الناس الغاليين أوي عليا...
+        كان نفسي يكون عندي عذر أكلمك بيه،
+        لقيت عيد ميلادك فرصة 😂💗
+      </div>
+
+      <p style="text-align:center">
+        إن شاء الله تكون سنة سعيدة عليكي وكل السنين الجاية فرحة 🌸
+      </p>
+
+      <div style="text-align:center">
+        <button onclick="revealSurprise()">
+          طب في حاجة كمان؟ 👀
+        </button>
+      </div>
+
+      <div id="surprise">
+        🎉 مش عارف أعبر إزاي، بس بجد تعبت في الهدية دي.
+        لو فيها حاجة بايظة معلش، لسه بتعلم برمجة وبادئ فيها من يوم 30/12/2025💗
+        <br>
+        <span style="font-size:14px">
+          إن شاء الله أشوفك أحلى دكتورة ومحققة كل اللي نفسك فيه 💕
+        </span>
+      </div>
+    </div>
+  </section>
+  <!-- مفاجأة البوكيه: تظهر بعد الضغط على زر المفاجأة -->
+  <section class="card" id="bouquetCard">
+    <div style="font-size:38px">💐🎀</div>
+    <h2 style="color:#df6594">
+      ولسه في هدية كدة! 💗
+    </h2>
+    <p class="small">
+      عارفك مش هترضي في الحقيقة (:
+    </p>
+
+    <button id="bouquetBtn" onclick="openBouquet()">
+      افتحي البوكيه 💐
+    </button>
+
+    <p class="small" id="bouquetHint" style="display:none">
+      لسه محتاجين نحط رابط صفحة البوكيه بعد نشرها على GitHub Pages.
+    </p>
+  </section>
+
+  <div class="footer">
+    Made by ibrahim ♡<br>
+    wishing you a beautiful birthday 🌷
+  </div>
+
+</main>
+
+<script>
+/*
+  بعد رفع صفحة البوكيه على GitHub Pages،
+  ضع رابطها الكامل هنا بين علامتي الاقتباس.
+*/
+const BOUQUET_URL = "https://justforyou-sys.github.io/flowers3/";
+
+function openLetter() {
+  document.getElementById('letter').classList.add('show');
+
+  const btn = document.getElementById('openBtn');
+  btn.textContent = 'مفتوحة خلاص 💗';
+  btn.disabled = true;
+
+  burstHearts(18);
+}
+
+function revealSurprise() {
+  document.getElementById('surprise').classList.add('show');
+
+  const bouquetCard = document.getElementById('bouquetCard');
+  bouquetCard.style.display = 'block';
+
+  burstHearts(28);
+
+  setTimeout(() => {
+    bouquetCard.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+  }, 150);
+}
+
+function openBouquet() {
+  if (
+    !BOUQUET_URL.startsWith('https://') ||
+    BOUQUET_URL.includes('PASTE_YOUR_BOUQUET_URL_HERE')
+  ) {
+    const hint = document.getElementById('bouquetHint');
+    hint.style.display = 'block';
+    hint.textContent =
+      'ارفع صفحة البوكيه أولًا، ثم ضع رابطها في متغير BOUQUET_URL داخل الكود.';
+    return;
+  }
+
+  window.open(BOUQUET_URL, '_blank', 'noopener,noreferrer');
+}
+
+function burstHearts(count) {
+  const symbols = ['💗', '💕', '✨', '🌸', '🎀', '💖'];
+
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement('span');
+    el.className = 'float';
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.left = Math.random() * 95 + 'vw';
+    el.style.fontSize = (16 + Math.random() * 18) + 'px';
+    el.style.animationDuration = (3 + Math.random() * 3) + 's';
+
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 6500);
+  }
+}
+
+function updateCountdown() {
+  // العد حسب توقيت مصر المحلي
+  const target = new Date('2026-10-15T00:00:00+03:00');
+  const diff = target.getTime() - Date.now();
+
+  if (diff <= 0) {
+    document.getElementById('days').textContent = '🎂';
+    document.getElementById('hours').textContent = '💗';
+    document.getElementById('mins').textContent = '🎉';
+    return;
+  }
+
+  document.getElementById('days').textContent =
+    Math.floor(diff / 86400000);
+
+  document.getElementById('hours').textContent =
+    Math.floor((diff % 86400000) / 3600000);
+
+  document.getElementById('mins').textContent =
+    Math.floor((diff % 3600000) / 60000);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 30000);
+</script>
+</body>
+</html>
